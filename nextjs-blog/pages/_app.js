@@ -1,0 +1,17 @@
+import { ApolloProvider } from '@apollo/react-hooks';
+import client from '../config/apollo';
+import OrderState from '../context/orders/OrderState';
+
+const MyApp=({Component,pageProps})=>{
+    return(
+        <ApolloProvider client={client}>
+            <OrderState>
+            <Component{...pageProps}/>
+            </OrderState>
+        </ApolloProvider>
+          
+    )
+
+}
+
+export default MyApp;
